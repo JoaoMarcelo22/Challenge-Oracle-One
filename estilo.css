@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #000000;
+}
+header{
+    background-color: #41D9CE;
+    margin: 10px;
+    text-align: center;
+}
+main{
+    margin: 10px;
+}
+div{
+    text-align: center;
+    background-color: aqua;
+    height: 400px;;
+    width: 450px;
+    color: #ffffff;
+    display: inline-block;
+}
+footer{
+    padding: 5px;
+    margin: 10px;
+    background-color: #5EDBFA;
+    text-align: center;
+}

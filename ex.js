@@ -1,7 +1,4 @@
-//var codigo = document.getElementById('#mensagem');
-var codigo = "arroz";
-codigo.value;
-
-console.log(codigo);
-
-var final = document.querySelector('#endregionrecebe')
+function enviarMensagem(){
+var codigo = document.getElementById('mensagem').value;
+document.querySelector('#recebe').value = codigo;
+};

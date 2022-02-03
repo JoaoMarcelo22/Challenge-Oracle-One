@@ -1,26 +1,27 @@
-//const texto = document.getElementById('mensagem').value;
-const texto = "eu quero ir para casa";
-console.log(texto);
+function criptografar(){
+    let texto = document.getElementById('texto').value;
 
+    const textoModificado = texto.replace(/[a\á\à\â\ã]/gi, '01').replace(/[e\é\è\ê]/gi, '05').replace(/[i\í\ì\î]/gi, '09').replace(/[o\ó\ò\ô\õ]/gi, '15').replace(/[u\ú\ù\û]/gi, '21');
 
-const textoModificado = texto.replace(/[a\á\à\â\ã]/gi, '01').replace(/[e\é\è\ê]/gi, '05').replace(/[i\í\ì\î]/gi, '09').replace(/[o\ó\ò\ô\õ]/gi, '15').replace(/[u\ú\ù\û]/gi, '21');
+    let textoResultado = textoModificado;
 
-//let textoResultado = document.querySelector('#recebe');
+    document.querySelector('#msg').value = textoResultado;
 
-var textoResultado = textoModificado;
+};
 
+function verificar(){
 
-console.log(textoModificado);
+    var palavraChave = ['01', '05', '09', '15', '21'];
 
-var palavraChave = ['01', '05', '09', '15', '21'];
+    var verificar = palavraChave.some(elementoArray => textoResultado.includes(elementoArray));
 
-var verificar = palavraChave.some(elementoArray => textoResultado.includes(elementoArray));
+    if (verificar == true){
+        descriptografar();
+    } else {
+        alert('A mensagem não está criptografada!!');
+    }
+}
 
-
-
-//if (verificar){
- //   descripitografar();
-//}
-//else {
- //   alert('a mensagem não esta criptografada');
+//function  descriptografar(){
+ //   const textoModificado = texto.replace(/'01'/gi, 'a').replace(/'05'/gi, 'e').replace(/'09'/gi, 'i').replace(/'15'/gi, '0').replace(/'21'/gi, 'u');
 //}

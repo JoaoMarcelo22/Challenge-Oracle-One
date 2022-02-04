@@ -11,17 +11,35 @@ function criptografar(){
 
 function verificar(){
 
+    let texto = document.getElementById('texto').value;
+
     var palavraChave = ['01', '05', '09', '15', '21'];
 
-    var verificar = palavraChave.some(elementoArray => textoResultado.includes(elementoArray));
+    var verificar = palavraChave.some(elementoArray => texto.includes(elementoArray));
 
     if (verificar == true){
+        alert('realmente está criptografado!')
         descriptografar();
+
     } else {
         alert('A mensagem não está criptografada!!');
     }
 }
 
-//function  descriptografar(){
- //   const textoModificado = texto.replace(/'01'/gi, 'a').replace(/'05'/gi, 'e').replace(/'09'/gi, 'i').replace(/'15'/gi, '0').replace(/'21'/gi, 'u');
-//}
+function  descriptografar(){
+
+    let texto = document.getElementById('texto').value;
+
+    const textoModificado = texto.replace(/01/gi, 'a').replace(/05/gi, 'e').replace(/09/gi, 'i').replace(/15/gi, 'o').replace(/21/gi, 'u');
+
+    let textoResultado = textoModificado;
+
+    document.querySelector('#msg').value = textoResultado;
+}
+const textInput = document.getElementById('msg');
+const copyButton = document.getElementById('copy');
+
+copyButton.addEventListener('click', ()=> {
+  textInput.select();
+  document.execCommand('copy');
+});
